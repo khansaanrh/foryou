@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>For Khansa ♡ Happy 21st</title>
+  <meta name="description" content="A little world made for Khansa's 21st birthday.">
+  <meta name="theme-color" content="#FCE7EF">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236B1839' d='M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.9 4.5 6.6 4.5c2.1 0 3.5 1.2 4.4 2.5.9-1.3 2.3-2.5 4.4-2.5 3.7 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="./assets/photos/khansa/IMG-20260303-WA0079.jpg">
+  <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body class="is-locked">
+
+  <!-- ===== Ikon SVG (dipakai ulang di seluruh halaman) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-heart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 2.9 4.5 6.6 4.5c2.1 0 3.5 1.2 4.4 2.5.9-1.3 2.3-2.5 4.4-2.5 3.7 0 5.7 3.8 4.2 7.2C19.5 16.4 12 21 12 21z"/>
+    </symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2c.6 6 4 9.4 10 10-6 .6-9.4 4-10 10-.6-6-4-9.4-10-10 6-.6 9.4-4 10-10z"/>
+    </symbol>
+    <symbol id="i-bow" viewBox="0 0 100 72">
+      <g fill="currentColor">
+        <path d="M50 30C38 8 9 6 8 26c-1 17 26 18 42 4z"/>
+        <path d="M50 30C62 8 91 6 92 26c1 17-26 18-42 4z"/>
+        <path d="M46 33 33 66l9-4 6 8 4-36z"/>
+        <path d="M54 33l13 33-9-4-6 8-4-36z"/>
+        <ellipse cx="50" cy="31" rx="8" ry="9"/>
+      </g>
+      <g fill="#fff" opacity=".28">
+        <path d="M44 27C35 15 19 13 16 22c8-5 18-3 28 5z"/>
+        <path d="M56 27c9-12 25-14 28-5-8-5-18-3-28 5z"/>
+      </g>
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.2-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6z"/>
+    </symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24">
+      <rect fill="currentColor" x="6" y="5" width="4" height="14" rx="1.5"/>
+      <rect fill="currentColor" x="14" y="5" width="4" height="14" rx="1.5"/>
+    </symbol>
+    <symbol id="i-note" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>
+      </g>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/>
+    </symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/>
+    </symbol>
+    <symbol id="i-next" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+    </symbol>
+  </svg>
+
+  <div class="progress-ribbon" id="progress" aria-hidden="true"></div>
+  <div class="ambient" id="ambient" aria-hidden="true"></div>
+  <canvas class="fx-canvas" id="fx-canvas" aria-hidden="true"></canvas>
+
+  <!-- =====================================================
+       A. OPENING — "A little gift for you"
+       ===================================================== -->
+  <div class="opening" id="opening" role="dialog" aria-modal="true" aria-labelledby="opening-title">
+    <div class="opening__inner">
+      <p class="opening__psst">psst... someone made something special for you ♡</p>
+
+      <div class="envelope" id="envelope" aria-hidden="true">
+        <div class="envelope__back"></div>
+        <div class="envelope__letter">
+          <span class="envelope__to">to my favorite girl,</span>
+          <span class="envelope__name">Khansa</span>
+          <svg class="envelope__heart" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+        </div>
+        <div class="envelope__pocket"></div>
+        <div class="envelope__flap"></div>
+        <svg class="envelope__bow" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+      </div>
+
+      <h1 class="opening__title" id="opening-title">a little gift for <em>Khansa</em></h1>
+      <button class="btn btn--primary btn--lg" id="open-btn" type="button">
+        Open your little surprise
+        <svg class="btn__icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+      </button>
+      <p class="opening__hint" id="opening-hint" hidden>nyalakan suaranya ya ♡</p>
+    </div>
+  </div>
+
+  <main class="site" id="site" inert>
+
+    <!-- =====================================================
+         B. HERO — "Happy 21st, my love!"
+         ===================================================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__deco" aria-hidden="true">
+        <svg class="deco deco--heart d1" data-parallax="0.25" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+        <svg class="deco deco--sparkle d2" data-parallax="0.4" viewBox="0 0 24 24"><use href="#i-sparkle"/></svg>
+        <svg class="deco deco--bow d3" data-parallax="0.15" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+        <svg class="deco deco--heart d4" data-parallax="0.35" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+        <svg class="deco deco--sparkle d5" data-parallax="0.2" viewBox="0 0 24 24"><use href="#i-sparkle"/></svg>
+        <svg class="deco deco--heart d6" data-parallax="0.5" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+      </div>
+
+      <div class="hero__inner container">
+        <div class="hero__text">
+          <p class="eyebrow hero__eyebrow">a little world made for you · 21</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line">Happy 21st</span>
+            <span class="line">Birthday,</span>
+            <span class="line"><em>Sayang!</em> <span class="hero__heart">♡</span></span>
+          </h1>
+          <p class="hero__sub">
+            Today is all about you. Happy birthday to the girl who makes
+            every ordinary day softer, brighter, and a little more beautiful.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#countdown">Let's unwrap your day</a>
+          </div>
+          <p class="hero__note">pelan-pelan aja scroll-nya ya ↓</p>
+        </div>
+
+        <!-- Ganti foto hero di sini (atribut src) -->
+        <figure class="hero__photo" data-parallax="-0.06">
+          <button class="hero__frame" id="hero-frame" type="button" aria-label="Foto Khansa, ketuk untuk kejutan kecil">
+            <img src="./assets/photos/khansa/IMG-20260303-WA0079.jpg" alt="Khansa tersenyum dengan scarf bermotif" fetchpriority="high">
+          </button>
+          <svg class="hero__bow" aria-hidden="true" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+          <span class="sticker sticker--21" aria-hidden="true">21</span>
+          <span class="sticker sticker--tag" aria-hidden="true">birthday girl</span>
+          <figcaption class="hero__caption">the prettiest 21-year-old, objectively.</figcaption>
+          <span class="hero__bubble" id="hero-bubble" aria-live="polite"></span>
+        </figure>
+      </div>
+
+      <a class="scroll-cue" href="#countdown" aria-label="Scroll ke bawah">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- =====================================================
+         C. COUNTDOWN
+         ===================================================== -->
+    <section class="section section--blush countdown" id="countdown" aria-labelledby="countdown-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">chapter 01</p>
+          <h2 class="section-title" id="countdown-title">The <em>big</em> day</h2>
+          <p class="section-sub">hari paling penting tahun ini, menurut kalender aku</p>
+        </header>
+
+        <div class="countdown__card" data-reveal>
+          <svg class="countdown__bow" aria-hidden="true" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+
+          <div class="countdown__timer" id="cd-timer">
+            <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">hari</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">jam</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-minutes">00</span><span class="cd-label">menit</span></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-seconds">00</span><span class="cd-label">detik</span></div>
+          </div>
+
+          <div class="countdown__celebrate" id="cd-celebrate" hidden>
+            <p class="cd-celebrate__title" id="cd-celebrate-title"></p>
+            <p class="cd-celebrate__text" id="cd-celebrate-text"></p>
+          </div>
+
+          <p class="countdown__date" id="cd-date"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         D. GALLERY — "A collection of you"
+         ===================================================== -->
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">chapter 02</p>
+          <h2 class="section-title" id="gallery-title">A collection of <em>you</em></h2>
+          <p class="section-sub">ketuk fotonya buat lihat lebih dekat</p>
+        </header>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         E. MEMORIES — "My favorite place is next to you"
+         ===================================================== -->
+    <section class="section section--blush memories" id="memories" aria-labelledby="memories-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">chapter 03</p>
+          <h2 class="section-title" id="memories-title">My favorite place is <em>next to you</em></h2>
+          <p class="section-sub">a tiny scrapbook of us</p>
+        </header>
+        <div class="polaroid-wall" id="polaroid-wall"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         F. VIDEOS — "Little moments, big feelings"
+         (otomatis muncul kalau CONFIG.videos diisi)
+         ===================================================== -->
+    <section class="section videos" id="videos" aria-labelledby="videos-title" hidden>
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">chapter 04</p>
+          <h2 class="section-title" id="videos-title">Little moments, <em>big feelings</em></h2>
+          <p class="section-sub">tekan play, nyalakan suara</p>
+        </header>
+        <div class="video-grid" id="video-grid"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         G. LOVE LETTER
+         ===================================================== -->
+    <section class="section letter" id="letter" aria-labelledby="letter-title">
+      <div class="container container--narrow">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">a letter</p>
+          <h2 class="section-title" id="letter-title">From your <em>favorite person</em></h2>
+          <p class="section-sub">bacanya pelan-pelan ya</p>
+        </header>
+
+        <div class="letter-closed" id="letter-closed" data-reveal>
+          <div class="letter-envelope" aria-hidden="true">
+            <div class="letter-envelope__flap"></div>
+            <div class="letter-envelope__seal"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></div>
+            <span class="letter-envelope__to">for Khansa</span>
+          </div>
+          <button class="btn btn--primary btn--lg" id="letter-btn" type="button">Read my little letter</button>
+        </div>
+
+        <article class="letter-paper" id="letter-paper" hidden>
+          <svg class="letter-paper__bow" aria-hidden="true" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+          <p class="letter-paper__date" id="letter-date"></p>
+          <p class="letter-paper__greeting" id="letter-greeting"></p>
+          <div class="letter-paper__body" id="letter-body"></div>
+          <p class="letter-paper__closing" id="letter-closing"></p>
+          <p class="letter-paper__signoff" id="letter-signoff"></p>
+          <p class="letter-paper__sign" id="letter-sign"></p>
+          <div class="letter-paper__hearts" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#i-heart"/></svg><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+          </div>
+          <p class="letter-paper__skip" id="letter-skip">ketuk suratnya untuk tampilkan semua</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         MINI GAMES — "Let's play, birthday girl!"
+         ===================================================== -->
+    <section class="section section--blush games" id="games" aria-labelledby="games-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">intermission</p>
+          <h2 class="section-title" id="games-title">Let's play, <em>birthday girl!</em></h2>
+          <p class="section-sub">pilih satu, atau mainin semuanya</p>
+        </header>
+
+        <div class="game-tabs" role="tablist" aria-label="Mini games" data-reveal>
+          <button class="game-tab is-active" role="tab" id="tab-quiz" aria-selected="true" aria-controls="game-quiz" type="button">
+            <span class="game-tab__num">01</span><span class="game-tab__label">Love Quiz</span>
+          </button>
+          <button class="game-tab" role="tab" id="tab-catch" aria-selected="false" aria-controls="game-catch" tabindex="-1" type="button">
+            <span class="game-tab__num">02</span><span class="game-tab__label">Catch the Hearts</span>
+          </button>
+          <button class="game-tab" role="tab" id="tab-ride" aria-selected="false" aria-controls="game-ride" tabindex="-1" type="button">
+            <span class="game-tab__num">03</span><span class="game-tab__label">Road to Love</span>
+          </button>
+        </div>
+
+        <div class="game-card" data-reveal>
+          <div class="game-panel is-active" id="game-quiz" role="tabpanel" aria-labelledby="tab-quiz"></div>
+
+          <div class="game-panel" id="game-catch" role="tabpanel" aria-labelledby="tab-catch" hidden>
+            <div class="catch">
+              <div class="catch__hud">
+                <span class="pill"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg> <b id="catch-score">0</b></span>
+                <span class="pill">⏱ <b id="catch-time">25</b>s</span>
+                <span class="pill pill--soft">best <b id="catch-best">0</b></span>
+              </div>
+              <div class="catch__stage" id="catch-stage">
+                <canvas class="catch__canvas" id="catch-canvas" aria-label="Area game Catch the Hearts"></canvas>
+                <div class="catch__overlay" id="catch-overlay"></div>
+              </div>
+              <p class="catch__help">laptop: ← → atau A / D &nbsp;·&nbsp; HP: geser jari di area game</p>
+            </div>
+          </div>
+
+          <div class="game-panel" id="game-ride" role="tabpanel" aria-labelledby="tab-ride" hidden>
+            <div class="catch ride">
+              <div class="catch__hud">
+                <span class="pill"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg> <b id="ride-hearts">0</b></span>
+                <span class="pill pill--soft ride__fuel" aria-label="Bensin cinta">⛽ <span class="ride__fuel-bar"><span id="ride-fuel"></span></span></span>
+                <span class="pill pill--soft"><b id="ride-progress">0</b>%</span>
+              </div>
+              <div class="catch__stage ride__stage" id="ride-stage">
+                <canvas class="catch__canvas" id="ride-canvas" aria-label="Area game Road to Love"></canvas>
+                <div class="ride__controls" aria-hidden="true">
+                  <button class="ride__pedal ride__pedal--brake" id="ride-brake" type="button" tabindex="-1">◀ rem</button>
+                  <button class="ride__pedal ride__pedal--gas" id="ride-gas" type="button" tabindex="-1">gas ▶</button>
+                </div>
+                <div class="catch__overlay" id="ride-overlay"></div>
+              </div>
+              <p class="catch__help">laptop: tahan → / D buat gas, ← / A buat rem &nbsp;·&nbsp; HP: tahan tombol gas &amp; rem</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECRET SURPRISE — "One last thing..."
+         ===================================================== -->
+    <section class="section surprise" id="surprise" aria-labelledby="surprise-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">the end... almost</p>
+          <h2 class="section-title" id="surprise-title">One last <em>thing...</em></h2>
+        </header>
+
+        <div class="surprise__stage" id="surprise-stage" data-reveal>
+          <button class="gift" id="gift-btn" type="button" aria-label="Buka kado">
+            <span class="gift__glow"></span>
+            <span class="gift__box"></span>
+            <span class="gift__lid">
+              <svg class="gift__bow" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+            </span>
+          </button>
+          <p class="surprise__hint" id="gift-hint" aria-live="polite"></p>
+        </div>
+
+        <div class="surprise__reveal" id="surprise-reveal" hidden>
+          <figure class="polaroid polaroid--big">
+            <img id="surprise-photo" alt="Kita berdua" decoding="async">
+            <figcaption class="polaroid__caption" id="surprise-photo-caption"></figcaption>
+          </figure>
+          <div class="surprise__card">
+            <svg class="surprise__card-bow" aria-hidden="true" viewBox="0 0 100 72"><use href="#i-bow"/></svg>
+            <h3 class="surprise__title" id="surprise-message-title"></h3>
+            <div class="surprise__body" id="surprise-body"></div>
+            <p class="surprise__final" id="surprise-final"></p>
+            <div class="surprise__actions">
+              <button class="btn btn--primary" id="more-hearts" type="button">more hearts, please</button>
+              <a class="btn btn--ghost" href="#hero">back to the start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <svg class="footer__heart" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+      <p>made with way too much love (and a little overthinking) for Khansa</p>
+      <p class="footer__small">21 · <span id="footer-year"></span></p>
+    </footer>
+  </main>
+
+  <!-- ===== Tombol musik melayang ===== -->
+  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Putar musik" hidden>
+    <span class="music-toggle__disc">
+      <svg class="music-toggle__icon music-toggle__icon--play" viewBox="0 0 24 24"><use href="#i-note"/></svg>
+      <svg class="music-toggle__icon music-toggle__icon--pause" viewBox="0 0 24 24"><use href="#i-pause"/></svg>
+    </span>
+    <span class="music-toggle__label" id="music-label">our song</span>
+  </button>
+  <audio id="bg-music" loop preload="none"></audio>
+
+  <!-- ===== Lightbox foto ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto" hidden>
+    <button class="lightbox__btn lightbox__close" id="lb-close" type="button" aria-label="Tutup"><svg viewBox="0 0 24 24"><use href="#i-close"/></svg></button>
+    <button class="lightbox__btn lightbox__prev" id="lb-prev" type="button" aria-label="Foto sebelumnya"><svg viewBox="0 0 24 24"><use href="#i-prev"/></svg></button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lb-img" alt="" draggable="false">
+      <figcaption class="lightbox__caption">
+        <span id="lb-caption"></span>
+        <span class="lightbox__count" id="lb-count"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__next" id="lb-next" type="button" aria-label="Foto berikutnya"><svg viewBox="0 0 24 24"><use href="#i-next"/></svg></button>
+  </div>
+
+  <!-- ===== Modal video ===== -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video" hidden>
+    <button class="lightbox__btn lightbox__close" id="vm-close" type="button" aria-label="Tutup video"><svg viewBox="0 0 24 24"><use href="#i-close"/></svg></button>
+    <div class="video-modal__inner">
+      <video class="video-modal__player" id="vm-player" controls playsinline preload="metadata"></video>
+      <p class="video-modal__title" id="vm-title"></p>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
+  <script src="./games.js"></script>
+</body>
+</html>
