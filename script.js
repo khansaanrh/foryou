@@ -445,7 +445,7 @@
       celebrate.hidden = false;
       if (newMode === "today") {
         title.textContent = "It's your birthday!! 🎂";
-        text.textContent = "Hari ini dunia resmi merayakan kamu. Selamat 21 tahun, sayang. Hari ini kamu bebas minta apa aja (dalam batas wajar, ya).";
+        text.textContent = "Hari ini dunia resmi merayakan kamu. Selamat 21 tahun, sayang. Hari ini kamu bebas minta apa aja.";
       } else {
         const days = Math.max(1, Math.floor(msSince / DAY));
         title.textContent = "21 looks so good on you";

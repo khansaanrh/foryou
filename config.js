@@ -201,7 +201,7 @@ const CONFIG = {
       "hmm, a little harder?",
       "almost there... ♡"
     ],
-    photo: "./assets/photos/together/IMG-20260603-WA0040.jpg",
+    photo: "./assets/photos/together/IMG-20241126-WA0101.jpg",
     photoCaption: "you & me ♡",
     title: "You are so loved.",
     paragraphs: [
